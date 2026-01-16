@@ -18,3 +18,6 @@ if clicked_button:
     st.session_state['number']  += 1
 
 st.write(st.session_state['number'] )
+
+message('Hello I am a robot',avatar_style=st.image('monster.jpg'))
+message('I hate robots' ,is_user=True)
