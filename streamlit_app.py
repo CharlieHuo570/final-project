@@ -123,5 +123,3 @@ with st.form ("Theme for the game"):
 
 
 
-
-message('Hi im bored')
