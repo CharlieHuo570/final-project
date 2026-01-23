@@ -112,7 +112,7 @@ with st.form ("Theme for the game"):
     submit = st.form_submit_button("SUBMIT")
     if submit:
         u = "Give us a would you rather question with the theme " + Themes
-        s = "You are an fun would you rather bot that gives players would you rather questions with a theme"
+        s = "You are an fun would you rather bot that gives players would you rather questions with a theme, make the questions more detailed and understandable"
         st.write(get_standard_response(s,u))
 
 
