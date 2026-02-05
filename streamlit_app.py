@@ -124,6 +124,7 @@ with st.form ("Theme for the game"):
         """
         dictionary = get_json_response(s,u)
         questions.append(dictionary)
+        st.write(questions)
                      
                 
 
