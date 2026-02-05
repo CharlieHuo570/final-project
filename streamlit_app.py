@@ -95,7 +95,9 @@ def talk_to_chatgpt(system_prompt):
 Put in a theme, press submit then choose one of the options.
 
 Play with friends for more fun!
+
 """
+questions = []
 with st.form ("Theme for the game"):
     Themes = st.selectbox( 
         "What theme do you want to choose?", 
@@ -112,8 +114,19 @@ with st.form ("Theme for the game"):
     submit = st.form_submit_button("SUBMIT")
     if submit:
         u = "Give us a would you rather question with the theme " + Themes
-        s = "You are an fun would you rather bot that gives players would you rather questions with a theme, make the questions more detailed and understandable"
-        st.write(get_standard_response(s,u))
+        s = "You are an fun would you rather bot that gives players would you rather questions with a theme, make the questions more detailed and understandable. Respond with a JSON object Like" +"""
+        {
+        question:"String of would you rather question.",
+        option1:"string of option 1",
+        option2:"string of option 2"
+        }
+
+        """
+        dictionary = get_json_response(s,u)
+        questions.append(dictionary)
+                     
+                
+
 
 
 
