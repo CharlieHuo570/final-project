@@ -97,6 +97,7 @@ Put in a theme, press submit then choose one of the options.
 Play with friends for more fun!
 
 """
+submitted = False
 if 'questions' not in st.session_state:
     st.session_state['questions'] = []
 if 'answer' not in st.session_state:
@@ -117,6 +118,7 @@ with st.form ("Theme for the game"):
 
     submit = st.form_submit_button("SUBMIT")
     if submit:
+        submitted = True
         u = "Give us a would you rather question with the theme " + Themes
         s = "You are an fun would you rather bot that gives players would you rather questions with a theme, make the questions more detailed and understandable. Respond with a JSON object Like" +"""
         {
@@ -127,11 +129,9 @@ with st.form ("Theme for the game"):
 
         """
         dictionary = get_json_response(s,u)
-        st.session_state["questions"].append(dictionary)
-        st.write(st.session_state['questions'])
         st.write(st.session_state["questions"][-1]['question'])
 
-if len(st.session_state['questions']) > 0:
+if len(st.session_state['questions']) > 0 and submitted:
     opt1 = st.button(st.session_state["questions"][-1]["option1"])
 
     opt2 = st.button(st.session_state["questions"][-1]["option2"])
@@ -144,7 +144,12 @@ if len(st.session_state['questions']) > 0:
         st.rerun()
 
 
-        
+for i in range(len(st.session_state['questions'])-2):
+    q = st.session_state['questions'][i]['question']
+    a = st.session_state['answer'][i]
+
+    st.write(q)
+    st.write('Aswer chosen: ' + a)
 
                      
                 
