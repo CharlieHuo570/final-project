@@ -140,13 +140,11 @@ if len(st.session_state['questions']) > 0 and submitted:
 
     if opt1:
         st.session_state['answer'].append(1)
-        st.rerun()
     if opt2:
         st.session_state['answer'].append(2)
-        st.rerun()
 
 
-for i in range(len(st.session_state['questions'])-2):
+for i in range(len(st.session_state['questions'])-1):
     q = st.session_state['questions'][i]['question']
     st.write( st.session_state['answer'])
     a = st.session_state['answer'][i]
