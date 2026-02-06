@@ -97,8 +97,8 @@ Put in a theme, press submit then choose one of the options.
 Play with friends for more fun!
 
 """
-if 'question' not in st.session_state:
-    st.session_state['question'] = []
+if 'questions' not in st.session_state:
+    st.session_state['questions'] = []
 
 with st.form ("Theme for the game"):
     Themes = st.selectbox( 
