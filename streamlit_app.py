@@ -129,9 +129,9 @@ with st.form ("Theme for the game"):
         st.write(st.session_state['questions'])
         st.write(st.session_state["questions"][-1]['question'])
     
-        opt1 = st.button(st.session_state["questions"][-1]["option1"])
+opt1 = st.button(st.session_state["questions"][-1]["option1"])
 
-        opt2 = st.button(st.session_state["questions"][-1]["option2"])
+opt2 = st.button(st.session_state["questions"][-1]["option2"])
 
         
 
