@@ -126,6 +126,7 @@ with st.form ("Theme for the game"):
         """
         dictionary = get_json_response(s,u)
         st.session_state["questions"].append(dictionary)
+        st.write(st.session_state['questions'])
         st.write(st.session_state["questions"][-1]['q']['question'])
     
         opt1 = st.button(st.session_state["questions"][-1]['q']["option1"])
