@@ -129,7 +129,8 @@ with st.form ("Theme for the game"):
 
         """
         dictionary = get_json_response(s,u)
-        st.write(st.session_state["questions"][-1]['question'])
+        if len(st.session_state['questions']) > 0 :
+            st.write(st.session_state["questions"][-1]['question'])
 
 if len(st.session_state['questions']) > 0 and submitted:
     opt1 = st.button(st.session_state["questions"][-1]["option1"])
@@ -140,7 +141,7 @@ if len(st.session_state['questions']) > 0 and submitted:
         st.session_state['answer'].append(1)
         st.rerun()
     if opt2:
-        st.session_state['answer'].append(1)
+        st.session_state['answer'].append(2)
         st.rerun()
 
 
