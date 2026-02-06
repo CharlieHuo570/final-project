@@ -129,6 +129,7 @@ with st.form ("Theme for the game"):
 
         """
         dictionary = get_json_response(s,u)
+        st.session_state['questions'].append(dictionary)
         if len(st.session_state['questions']) > 0 :
             st.write(st.session_state["questions"][-1]['question'])
 
