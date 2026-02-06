@@ -148,6 +148,7 @@ if len(st.session_state['questions']) > 0 and submitted:
 
 for i in range(len(st.session_state['questions'])-2):
     q = st.session_state['questions'][i]['question']
+    st.write('answer' + st.session_state['answer'])
     a = st.session_state['answer'][i]
 
     st.write(q)
