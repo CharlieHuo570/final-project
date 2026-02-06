@@ -99,6 +99,8 @@ Play with friends for more fun!
 """
 if 'questions' not in st.session_state:
     st.session_state['questions'] = []
+if 'answer' not in st.session_state:
+    st.session_state['answer'] = []
 
 with st.form ("Theme for the game"):
     Themes = st.selectbox( 
@@ -128,10 +130,19 @@ with st.form ("Theme for the game"):
         st.session_state["questions"].append(dictionary)
         st.write(st.session_state['questions'])
         st.write(st.session_state["questions"][-1]['question'])
-    
-opt1 = st.button(st.session_state["questions"][-1]["option1"])
 
-opt2 = st.button(st.session_state["questions"][-1]["option2"])
+if len(st.session_state['questions']) > 0:
+    opt1 = st.button(st.session_state["questions"][-1]["option1"])
+
+    opt2 = st.button(st.session_state["questions"][-1]["option2"])
+
+    if opt1:
+        st.session_state['answer'].append(1)
+        st.rerun()
+    if opt2:
+        st.session_state['answer'].append(1)
+        st.rerun()
+
 
         
 
