@@ -117,7 +117,7 @@ with st.form ("Theme for the game"):
     if submit:
         u = "Give us a would you rather question with the theme " + Themes
         s = "You are an fun would you rather bot that gives players would you rather questions with a theme, make the questions more detailed and understandable. Respond with a JSON object Like" +"""
-        q={
+        {
         question:"String of would you rather question.",
         option1:"string of option 1",
         option2:"string of option 2"
@@ -127,11 +127,11 @@ with st.form ("Theme for the game"):
         dictionary = get_json_response(s,u)
         st.session_state["questions"].append(dictionary)
         st.write(st.session_state['questions'])
-        st.write(st.session_state["questions"][-1]['q']['question'])
+        st.write(st.session_state["questions"][-1]['question'])
     
-        opt1 = st.button(st.session_state["questions"][-1]['q']["option1"])
+        opt1 = st.button(st.session_state["questions"][-1]["option1"])
 
-        opt2 = st.button(st.session_state["questions"][-1]['q']["option2"])
+        opt2 = st.button(st.session_state["questions"][-1]["option2"])
 
         
 
