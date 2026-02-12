@@ -132,11 +132,10 @@ with st.form ("Theme for the game"):
         st.session_state['questions'].append(dictionary)
         if len(st.session_state['questions']) > 0 :
             st.write(st.session_state["questions"][-1]['question'])
-
+            st.button(st.session_state["questions"][-1]["option1"])
+            st.button(st.session_state["questions"][-1]["option2"])
                      
-                
-
-
+    
 
 
 
