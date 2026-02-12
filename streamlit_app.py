@@ -139,6 +139,7 @@ if len(st.session_state['questions']) > 0 and submitted:
     opt2 = st.button(st.session_state["questions"][-1]["option2"])
 
     if opt1:
+        print(1)
         st.session_state['answer'].append(1)
     if opt2:
         st.session_state['answer'].append(2)
