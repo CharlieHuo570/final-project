@@ -134,7 +134,6 @@ with st.form ("Theme for the game"):
             st.write(st.session_state["questions"][-1]['question'])
 
 if len(st.session_state['questions']) > 0 and submitted:
-    st.write(st.session_state['questions'][-1])
     if st.button(st.session_state["questions"][-1]["option1"]):
         st.session_state['answer'].append(1)
     if st.button(st.session_state["questions"][-1]["option2"]):
