@@ -132,22 +132,7 @@ with st.form ("Theme for the game"):
         st.session_state['questions'].append(dictionary)
         if len(st.session_state['questions']) > 0 :
             st.write(st.session_state["questions"][-1]['question'])
-"""
-if len(st.session_state['questions']) > 0 and submitted:
-    if st.button(st.session_state["questions"][-1]["option1"]):
-        st.session_state['answer'].append(1)
-    if st.button(st.session_state["questions"][-1]["option2"]):
-        st.session_state['answer'].append(2)
 
-
-for i in range(len(st.session_state['questions'])):
-    q = st.session_state['questions'][i]['question']
-    st.write( st.session_state['answer'])
-    a = st.session_state['answer'][i]
-
-    st.write(q)
-    st.write('Aswer chosen: ' + a)
-"""
                      
                 
 
