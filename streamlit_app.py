@@ -114,7 +114,7 @@ with st.form ("Theme for the game"):
             "sports",
             "Time travel",
             "DARK",
-            "Age Based"])
+            "Age Based"])                                           
 
     submit = st.form_submit_button("SUBMIT")
     if submit:
@@ -144,7 +144,7 @@ if len(st.session_state['questions']) > 0 and submitted:
         st.session_state['answer'].append(2)
 
 
-for i in range(len(st.session_state['questions'])-1):
+for i in range(len(st.session_state['questions'])):
     q = st.session_state['questions'][i]['question']
     st.write( st.session_state['answer'])
     a = st.session_state['answer'][i]
