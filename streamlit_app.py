@@ -3,6 +3,17 @@ from st_chat_message import message
 from openai import OpenAI
 import json
 
+
+st.markdown(
+    """
+    <style>
+    [data-testid="stAppViewContainer"] {
+        background-color: #141775;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 client = OpenAI(
     api_key = st.secrets["api_key"]
 )
@@ -138,6 +149,7 @@ if len(st.session_state['questions']) > 0 and submitted:
 
     st.button(st.session_state["questions"][-1]["option1"])
     st.button(st.session_state["questions"][-1]["option2"])
+
 
 
 
